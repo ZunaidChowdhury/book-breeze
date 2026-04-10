@@ -12,7 +12,7 @@ const BookCardSquare = ({ book }) => {
                         <img src={book.image} alt="" className='h-41.5 group-hover:scale-110 transition-transform duration-300' />
                     </div>
 
-                    <h3 className='mt-4 text-text-primary text-xl font-semibold'>{book.bookName}</h3>
+                    <h3 className='mt-4 text-text-primary text-xl font-semibold group-hover:text-theme-primary transition-colors duration-300'>{book.bookName}</h3>
                     <p className='mt-2 text-text-secondary text-base'>By: {book.author}</p>
                 </div>
 
