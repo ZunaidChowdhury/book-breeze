@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&display=swap');
 
 @import "tailwindcss";
+
 @plugin "daisyui" {
     themes: light --default;
 }
@@ -63,12 +64,16 @@ html {
 
     --color-theme-primary: var(--theme-primary);
     --color-theme-secondary: var(--theme-secondary);
-    
+
     --color-text-primary: var(--text-primary);
     --color-text-secondary: var(--text-secondary);
 
+    --background-image-brand-gradient: linear-gradient(to right,
+            #59c6d2 0%,
+            #98e2e9 100%);
 
+/* 
     --background-image-brand-gradient: linear-gradient(to right,
             rgba(79, 57, 246, 1) 0%,
-            rgba(149, 20, 250, 1) 100%);
+            rgba(149, 20, 250, 1) 100%); */
 }

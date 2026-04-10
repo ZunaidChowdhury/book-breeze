@@ -11,6 +11,7 @@ import About from './pages/About';
 import NotFound from './pages/NotFound';
 import ListedBooks from './pages/ListedBooks';
 import PagesToRead from './pages/PagesToRead';
+import BookDetails from './pages/BookDetails';
 
 
 const router = createBrowserRouter([
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
       { path: "listed-books", Component: ListedBooks },
       { path: "pages-to-read", Component: PagesToRead },
       { path: "about", Component: About },
+      { path: "books/:bookId", Component: BookDetails },
       { path: "*", Component: NotFound },
     ],
   },

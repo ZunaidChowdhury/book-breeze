@@ -4,7 +4,7 @@ import { Link, NavLink } from 'react-router'
 const NavBar = () => {
     return (
         <div>
-            <div className="w-full max-w-292.5 mx-auto navbar bg-base-100">
+            <div className="w-full max-w-350 mx-auto navbar bg-base-100">
 
                 {/* nav left */}
                 <div className="navbar-start">
@@ -27,12 +27,12 @@ const NavBar = () => {
                             <li><a>Item 3</a></li>
                         </ul>
                     </div>
-                    <Link to='/' className="text-xl font-black">Book Breeze</Link>
+                    <Link to='/' className="text-3xl font-extrabold bg-linear-to-r from-[#23be0a] to-[#2fb3c2] bg-clip-text text-transparent">Book Breeze</Link>
                 </div>
                 {/* nav center/desktop nav  */}
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
-                        <li><NavLink to='/' className={({isActive})=> `${isActive ? 'text-theme-primary border border-theme-primary' : ''}`}>Home</NavLink></li>
+                    <ul className="menu menu-horizontal px-1 text-lg">
+                        <li><NavLink to='/' className={({isActive})=> `${isActive ? 'text-theme-primary border border-theme-primary' : ''} `}>Home</NavLink></li>
                         <li><NavLink to='/listed-books' className={({isActive})=> `${isActive ? 'text-theme-primary border border-theme-primary' : ''}`}>Listed Books</NavLink></li>
                         <li><NavLink to='/pages-to-read' className={({isActive})=> `${isActive ? 'text-theme-primary border border-theme-primary' : ''}`}>Pages to Read</NavLink></li>
                         {/* dropdown */}
@@ -49,9 +49,9 @@ const NavBar = () => {
                 </div>
 
                 {/* nav right */}
-                <div className="navbar-end">
-                    <a className="btn bg-theme-primary text-white mr-2">Sign In</a>
-                    <a className="btn bg-theme-secondary text-white">Sign Up</a>
+                <div className="navbar-end ">
+                    <a className="btn bg-green-600 text-white mr-2 text-lg">Sign In</a>
+                    <a className="btn bg-[#19818d] text-white text-lg">Register</a>
                 </div>
             </div>
         </div>

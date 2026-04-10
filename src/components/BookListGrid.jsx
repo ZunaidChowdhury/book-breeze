@@ -7,13 +7,13 @@ const BookListGrid = ({bookListDataPromise}) => {
     
     return (
         <div id='book-list' className='w-full py-10 tablet:py-20 bg-background'>
-            <div className='w-full max-w-292.5 mx-auto  px-4 xl:px-0'>
+            <div className='w-full max-w-350 mx-auto  px-4 xl:px-0'>
                 {/* section heading  */}
                 <div className='text-center'>
                     <h3 className='text-text-primary text-[2.5rem] tablet:text-[3rem] font-extrabold mb-4 leading-tight'>
                         Browse the Collection
                     </h3>
-                    <p className='text-text-secondary text-base font-normal leading-tight'>
+                    <p className='text-text-secondary text-xl font-normal leading-tight'>
                         Beyond the playbook — explore our curated collection of guides designed to level up<br/>every area of your life, from mindset to social mastery.
                     </p>
                 </div>
