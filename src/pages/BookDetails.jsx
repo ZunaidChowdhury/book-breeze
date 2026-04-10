@@ -10,7 +10,7 @@ const BookDetails = ({ bookId, booksDataPromise }) => {
 
     return (
         // <div className='w-full max-w-292.5 mx-auto mt-2 mb-6 grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-16'>
-        <div className='mt-8 w-full max-w-350 mx-auto mb-6 grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-16'>
+        <div className='mt-8 mb-20 w-full max-w-350 mx-auto mb-6 grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-16'>
 
             {/* left  */}
             <div className='bg-zinc-200 rounded-2xl p-18.5 flex justify-center items-center'>

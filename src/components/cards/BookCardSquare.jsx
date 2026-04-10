@@ -4,7 +4,7 @@ import { Link } from 'react-router'
 const BookCardSquare = ({ book }) => {
 
     return (
-            <Link to={`/books/${book.bookId}`} className='p-6 border border-zinc-200 rounded-2xl flex flex-col justify-between group hover:shadow-lg transition-all duration-300'>
+            <Link to={`/books/${book.bookId}`} className='p-6 border border-zinc-200 rounded-2xl flex flex-col justify-between group hover:shadow-lg transition-all duration-300 hover:-translate-y-3'>
                 <div >
                     {/* top image */}
                     <div className='w-full h-57.5 py-8 bg-zinc-100 rounded-lg flex justify-center items-center'>
