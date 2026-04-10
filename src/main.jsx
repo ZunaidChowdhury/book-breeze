@@ -9,6 +9,8 @@ import RootLayout from './layouts/RootLayout';
 import Home from './pages/Home';
 import About from './pages/About';
 import NotFound from './pages/NotFound';
+import ListedBooks from './pages/ListedBooks';
+import PagesToRead from './pages/PagesToRead';
 
 
 const router = createBrowserRouter([
@@ -17,6 +19,8 @@ const router = createBrowserRouter([
     Component: RootLayout,
     children: [
       { index: true, Component: Home },
+      { path: "listed-books", Component: ListedBooks },
+      { path: "pages-to-read", Component: PagesToRead },
       { path: "about", Component: About },
       { path: "*", Component: NotFound },
     ],
