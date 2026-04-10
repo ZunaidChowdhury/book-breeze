@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&display=swap');
+
+@import "tailwindcss";
+
+@plugin "daisyui" {
+    themes: light --default;
+}
+
+
+.literata {
+    font-family: "Literata", serif;
+    font-optical-sizing: auto;
+}
+
+
+
+
+
+* {
+    /* margin: 0;
+    padding: 0; */
+    box-sizing: border-box;
+    /* text-decoration: none;
+    list-style-type: none; */
+
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+
+:root {
+    --background: white;
+    --surface: #f3f3f3;
+
+    --theme-primary: #23be0a;
+    --theme-secondary: #59c6d2;
+
+    --text-primary: #101727;
+    --text-secondary: #627382;
+}
+
+@theme {
+    /* Custom Breakpoints */
+    /* 320px */
+    --breakpoint-xxs: 20rem;
+    /* 380px    */
+    --breakpoint-xs: 23.75rem;
+    /* 440px */
+    --breakpoint-st: 27.5rem;
+    /* 520px */
+    --breakpoint-mt: 32.5rem;
+
+    --breakpoint-tablet: 36rem;
+    /* 576px */
+    --breakpoint-desktop: 62rem;
+    /* 992px */
+
+    /* Mapping CSS Variables to Tailwind Theme */
+    --color-background: var(--background);
+    --color-surface: var(--surface);
+
+    --color-theme-primary: var(--theme-primary);
+    --color-theme-secondary: var(--theme-secondary);
+
+    --color-text-primary: var(--text-primary);
+    --color-text-secondary: var(--text-secondary);
+
+    --background-image-brand-gradient: linear-gradient(to right,
+            #59c6d2 0%,
+            #98e2e9 100%);
+
+/* 
+    --background-image-brand-gradient: linear-gradient(to right,
+            rgba(79, 57, 246, 1) 0%,
+            rgba(149, 20, 250, 1) 100%); */
+}
