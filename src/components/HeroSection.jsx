@@ -1,5 +1,5 @@
 import React from 'react'
-import heroBook from '../../public/dating-book.png'
+import heroBook from '../../public/b1.png'
 
 const HeroSection = () => {
     return (
@@ -18,7 +18,7 @@ const HeroSection = () => {
                 </div>
                 {/* right */}
                 <div className='justify-self-end'>
-                    <img src={heroBook} alt="The Dating Playbook for Men" />
+                    <img src={heroBook} alt="The Dating Playbook for Men" className='w-[320px]' />
                 </div>
             </div>
 
