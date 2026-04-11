@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router'
 
 const NavBar = () => {
     return (
-        <div>
+        <div className='border-b border-zinc-200'>
             <div className="w-full max-w-350 mx-auto navbar bg-base-100">
 
                 {/* nav left */}
@@ -50,8 +50,8 @@ const NavBar = () => {
 
                 {/* nav right */}
                 <div className="navbar-end ">
-                    <a className="btn bg-green-600 text-white mr-2 text-lg">Sign In</a>
-                    <a className="btn bg-[#19818d] text-white text-lg">Register</a>
+                    <a className="btn bg-green-600 text-white mr-2 text-lg font-normal px-5 py-5.5">Sign In</a>
+                    <a className="btn bg-[#19818d] text-white text-lg font-normal px-5 py-5.5">Register</a>
                 </div>
             </div>
         </div>

@@ -1,5 +1,6 @@
-import React, { Suspense, use, useState } from 'react'
+import React, { Suspense, use, useContext, useState } from 'react'
 import { useParams } from 'react-router';
+import { BookContext } from '../contexts/BookContext';
 
 const BookDetails = ({ bookId, booksDataPromise }) => {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -8,9 +9,15 @@ const BookDetails = ({ bookId, booksDataPromise }) => {
 
     // console.log(theBook);
 
+    const {
+        handleMarkAsRead, handleWishlist
+    } = useContext(BookContext);
+
+
+
     return (
         // <div className='w-full max-w-292.5 mx-auto mt-2 mb-6 grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-16'>
-        <div className='mt-8 mb-20 w-full max-w-350 mx-auto mb-6 grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-16'>
+        <div className='mt-8 mb-20 w-full max-w-350 mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-16'>
 
             {/* left  */}
             <div className='bg-zinc-200 rounded-2xl p-18.5 flex justify-center items-center'>
@@ -70,8 +77,8 @@ const BookDetails = ({ bookId, booksDataPromise }) => {
                 </table>
 
                 <div className='mt-6'>
-                    <a className="btn bg-white border border-black text-black mr-2 text-base">Add to Readlist</a>
-                    <a className="btn bg-theme-secondary text-white text-base">Add to Wishlist</a>
+                    <button onClick={() => handleMarkAsRead(theBook)} className="btn bg-white border border-black text-black mr-2 text-lg font-normal px-5 py-5.5">Mark as Read</button>
+                    <button onClick={() => handleWishlist(theBook)} className="btn bg-theme-secondary text-white text-lg font-normal px-5 py-5.5">Add to Wishlist</button>
                 </div>
 
 

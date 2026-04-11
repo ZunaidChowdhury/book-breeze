@@ -3,7 +3,7 @@ import heroBook from '../../public/b1.png'
 
 const HeroSection = () => {
     return (
-        <div className='w-full max-w-350 mx-auto bg-zinc-200 mt-2 mb-6 rounded-3xl p-20'>
+        <div className='w-full max-w-350 mx-auto bg-zinc-200 mt-6 mb-6 rounded-3xl p-20'>
 
             <div className='grid grid-cols-[1.3fr_1fr] items-center'>
                 {/* left */}
