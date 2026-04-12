@@ -31,6 +31,8 @@ html {
 }
 
 
+
+
 :root {
     --background: white;
     --surface: #f3f3f3;
@@ -72,8 +74,16 @@ html {
             #59c6d2 0%,
             #98e2e9 100%);
 
-/* 
+    /* 
     --background-image-brand-gradient: linear-gradient(to right,
             rgba(79, 57, 246, 1) 0%,
             rgba(149, 20, 250, 1) 100%); */
+}
+
+
+
+
+.react-tabs__tab--selected {
+  border-color: var(--theme-primary) !important; /* Your desired color */
+  color: var(--theme-primary) !important;
 }

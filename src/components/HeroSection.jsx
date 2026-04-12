@@ -17,8 +17,8 @@ const HeroSection = () => {
                     <button className='tracking-wider mt-8 btn text-zinc-200 text-base font-medium bg-green-600 hover:bg-green-700 transition-colors duration-300'>Explore Books</button>
                 </div>
                 {/* right */}
-                <div className='justify-self-end'>
-                    <img src={heroBook} alt="The Dating Playbook for Men" className='w-[400px]' />
+                <div className='justify-self-center'>
+                    <img src={heroBook} alt="The Dating Playbook for Men" className='w-100 rotate-8 ' />
                 </div>
             </div>
 

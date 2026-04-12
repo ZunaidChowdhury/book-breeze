@@ -26,9 +26,21 @@ const BookContextProvider = ({ children }) => {
       toast.error("Already added to Wishlist!");
     }
     else {
-      setWishBooks([...readBooks, theBook])
+      setWishBooks([...wishBooks, theBook])
       toast.success("Added to Wishlist.");
     }
+  }
+
+
+  const deleteFromReadlist = (bookId) => {
+      const updatedReadBooks = readBooks.filter(b => b.bookId !== parseInt(bookId))
+      setReadBooks(updatedReadBooks)
+  }
+
+
+  const deleteFromWishlist = (bookId) => {
+      const updatedWishBooks = wishBooks.filter(b => b.bookId !== parseInt(bookId))
+      setWishBooks(updatedWishBooks)
   }
 
   const data = {
@@ -38,7 +50,10 @@ const BookContextProvider = ({ children }) => {
 
     wishBooks,
     setWishBooks,
-    handleWishlist
+    handleWishlist,
+
+    deleteFromReadlist,
+    deleteFromWishlist,
   };
 
   return (

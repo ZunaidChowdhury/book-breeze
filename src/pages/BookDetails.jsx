@@ -1,6 +1,7 @@
 import React, { Suspense, use, useContext, useState } from 'react'
 import { useParams } from 'react-router';
 import { BookContext } from '../contexts/BookContext';
+import { RingLoader } from 'react-spinners';
 
 const BookDetails = ({ bookId, booksDataPromise }) => {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -97,7 +98,7 @@ const BookDetailsPage = () => {
     const booksDataPromise = fetch('/booksData.json').then(res => res.json());
 
     return (
-        <Suspense fallback={<>loading...</>}>
+        <Suspense fallback={<div className='flex items-center justify-center min-h-screen'><RingLoader color="#00ff19" /></div>}>
             <BookDetails bookId={bookId} booksDataPromise={booksDataPromise} />
         </Suspense>
     )
