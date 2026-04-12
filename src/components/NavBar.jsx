@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router'
 
 const NavBar = () => {
     return (
-        <div className='border-b border-zinc-200'>
+        <div className='sticky top-0 z-100 border-b border-zinc-200'>
             <div className="w-full max-w-350 mx-auto navbar bg-base-100">
 
                 {/* nav left */}
@@ -27,14 +27,17 @@ const NavBar = () => {
                             <li><a>Item 3</a></li>
                         </ul>
                     </div>
-                    <Link to='/' className="text-3xl font-extrabold bg-linear-to-r from-[#23be0a] to-[#2fb3c2] bg-clip-text text-transparent">Book Breeze</Link>
+                    <Link to='/' className='flex flex-col'>
+                        <span className="text-3xl font-extrabold bg-linear-to-r from-[#23be0a] to-[#2fb3c2] bg-clip-text text-transparent">Book Breeze</span>
+                        <span className='text-text-secondary text-sm font-semibold'>DISCOVER YOUR NEXT READ</span>
+                    </Link>
                 </div>
                 {/* nav center/desktop nav  */}
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 text-lg">
-                        <li><NavLink to='/' className={({isActive})=> `${isActive ? 'text-theme-primary border border-theme-primary' : ''} `}>Home</NavLink></li>
-                        <li><NavLink to='/listed-books' className={({isActive})=> `${isActive ? 'text-theme-primary border border-theme-primary' : ''}`}>Listed Books</NavLink></li>
-                        <li><NavLink to='/pages-to-read' className={({isActive})=> `${isActive ? 'text-theme-primary border border-theme-primary' : ''}`}>Pages to Read</NavLink></li>
+                        <li><NavLink to='/' className={({ isActive }) => `${isActive ? 'text-theme-primary border border-theme-primary' : ''} `}>Home</NavLink></li>
+                        <li><NavLink to='/listed-books' className={({ isActive }) => `${isActive ? 'text-theme-primary border border-theme-primary' : ''}`}>Listed Books</NavLink></li>
+                        <li><NavLink to='/pages-to-read' className={({ isActive }) => `${isActive ? 'text-theme-primary border border-theme-primary' : ''}`}>Pages to Read</NavLink></li>
                         {/* dropdown */}
                         {/* <li>
                             <details>

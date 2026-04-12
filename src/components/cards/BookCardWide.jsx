@@ -11,24 +11,22 @@ const BookCardWide = ({ book, page }) => {
     const {deleteFromReadlist, deleteFromWishlist} = useContext(BookContext);
     
     return (
-        <div className="relative group flex w-full rounded-3xl p-6 border border-zinc-200 hover:border-theme-primary  hover:shadow-md transition-all duration-300 font-sans">
+        <div className="relative group flex w-full h-100  rounded-3xl p-6 border border-zinc-200 hover:border-theme-primary  hover:shadow-md transition-all duration-300 font-sans">
 
             <button onClick={() => {page === 'read-books' ?  deleteFromReadlist(bookId) : page === 'wish-books' ? deleteFromWishlist(bookId) : null}} className='group/delete absolute top-6 right-6 bg-zinc-100 p-2 rounded-full cursor-pointer'>
                 <MdDelete size={30} className='group-hover/delete:text-red-600 transition-colors duration-300'/>
             </button>
             {/* Book Cover Image */}
-            <div className="shrink-0 mr-8">
-                <div className="p-12 w-60 h-full bg-zinc-100 rounded-lg overflow-hidden ">
+            <div className="shrink-0 mr-8 p-12 w-80 h-full bg-zinc-100 rounded-lg overflow-hidden">
                     <img
                         src={image}
                         alt="Annotated Texas Family Code 2019"
-                        className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+                        className="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-300"
                     />
-                </div>
             </div>
 
             {/* Content Section */}
-            <div className="grow flex flex-col justify-between">
+            <div className="grow flex flex-col justify-between pt-6">
                 <div>
                     <h2 className="text-3xl font-bold text-text-primary group-hover:text-theme-primary transition-colors duration-300 mb-2">{bookName}</h2>
                     <div className="flex items-center mb-4 text-gray-600 text-lg font-medium">

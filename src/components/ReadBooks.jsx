@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import NoDataCard from './NoDataCard'
 import { BookContext } from '../contexts/BookContext';
 import BookCardWide from './cards/BookCardWide';
@@ -17,17 +17,34 @@ import BookCardWide from './cards/BookCardWide';
 //     yearOfPublishing: 1960
 // }
 
-const ReadBooks = () => {
+const ReadBooks = ({ sortBy, pagesAscending, ratingAscending }) => {
     const { readBooks } = useContext(BookContext);
     // console.log(readBooks);
+    let filteredList = readBooks;
+    // console.log('filteredList: ', filteredList);
+
+
+    if (sortBy === 'pages') {
+        filteredList.sort((a, b) => {
+            return pagesAscending ? a.totalPages - b.totalPages : b.totalPages - a.totalPages;
+        })
+
+    }
+
+
+    else if (sortBy === 'rating') {
+        filteredList.sort((a, b) => {
+            return ratingAscending ? a.rating - b.rating : b.rating - a.rating;
+        })
+    }
 
     return (
         <div className='py-6 space-y-6'>
-            {readBooks.length < 1 ? <NoDataCard title={'Empty Readlist'} description={'Books you have marked as read will show here.'} /> :
-                (readBooks.map((b, i) => <BookCardWide page={'read-books'} key={i} book={b} />))
+            {filteredList.length < 1 ? <NoDataCard title={'Empty Readlist'} description={'Books you have marked as read will show here.'} /> :
+                (filteredList.map((b, i) => <BookCardWide page={'read-books'} key={i} book={b} />))
             }
         </div>
     )
 }
 
-export default ReadBooks
+export default ReadBooks;

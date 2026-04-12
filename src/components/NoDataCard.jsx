@@ -3,7 +3,7 @@ import noDataImg from '/no-data.png'
 
 const NoDataCard = ({ title, description }) => {
     return (
-        <div className='w-full max-w-350 mx-auto bg-zinc-100 mt-6 mb-6 rounded-3xl p-20 flex flex-col justify-center items-center'>
+        <div className='w-full max-w-350 mx-auto bg-zinc-100 mt-6  rounded-3xl p-20 flex flex-col justify-center items-center'>
 
             <img className='w-40' src={noDataImg} alt="no data" />
 

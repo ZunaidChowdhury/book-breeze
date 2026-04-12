@@ -22,7 +22,10 @@ const BookDetails = ({ bookId, booksDataPromise }) => {
 
             {/* left  */}
             <div className='bg-zinc-200 rounded-2xl p-18.5 flex justify-center items-center'>
-                <img src={theBook.image} alt={`${theBook.bookName} image`} />
+                <div className='w-full h-full max-h-153'>
+
+                <img className='h-full w-full object-contain'  src={theBook.image} alt={`${theBook.bookName} image`} />
+                </div>
             </div>
 
             {/* right */}
