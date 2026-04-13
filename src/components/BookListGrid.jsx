@@ -6,7 +6,7 @@ const BookListGrid = ({bookListDataPromise}) => {
     // console.log(bookListData);
     
     return (
-        <div id='book-list' className='w-full py-10 tablet:py-20 bg-background'>
+        <div id='book-collection' className='w-full py-10 tablet:py-20 bg-background'>
             <div className='w-full max-w-350 mx-auto  px-4 xl:px-0'>
                 {/* section heading  */}
                 <div className='text-center'>

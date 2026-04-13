@@ -1,19 +1,52 @@
-# book-breeze
+# 🚀 Book-Breeze
 This is an assignment project of MERN stack course in programming hero batch 13. Focused on React.js, React-Router, React Context API.
 
-# React + Vite
+This is a comprehensive Book Tracking Web App! A complete book-tracking ecosystem built from the ground. From custom data visualizations to a seamless "Read & Wishlist" flow, the result is pure satisfaction. 📈📖
+This project allowed me to dive deep into state management and custom data visualization.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live on Netlify - https://book-breeze-zunaid.netlify.app/ 
+<br/>
+<br/>
 
-Currently, two official plugins are available:
+## Key Features:
+✅ Data Viz: Custom-shaped Bar Charts using Recharts to track reading progress.<br/>
+✅ State Management: Integrated React Context API for seamless "Read" and "Wishlist" updates.<br/>
+✅ Dynamic Sorting: Advanced filtering by rating and page count (Asc/Desc).<br/>
+✅ Persistence: Local Storage integration to keep user data safe.<br/>
+✅ UI/UX: Built with TailwindCSS & DaisyUI, featuring interactive tabs, toast notifications, and smooth loading states.<br/>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## React Compiler
+## Tech Stack:
+⚛️ React.js — Component-based architecture<br/>
+🛣️ React Router — Seamless SPAs navigation<br/>
+🧠 Context API — Global state management<br/>
+📊 Recharts — Custom data viz for readers<br/>
+🎨 Tailwind CSS — Utility-first styling<br/>
+🌼 DaisyUI — Interactive UI components<br/>
+🌀 React Spinners — Smooth loading states<br/>
+🍞 React Toastify — Real-time user feedback<br/>
+📂 Local Storage — Persistent data tracking<br/>
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 How to Run Locally
+
+Clone the repository:
+
+1. git clone https://github.com/ZunaidChowdhury/book-breeze
+2. Install dependencies:
+   npm install
+3. Start the development server:
+   npm run dev
+   
+<br/>
+<br/>
+
+
+# Screenshots
+
+<div align="center">
+  <img src="./bb1.png" width="100%" alt="Completed project image" />
+  <img src="./bb2.png" width="100%" alt="Completed project image" />
+  <img src="./bb3.png" width="100%" alt="Completed project image" />
+</div>

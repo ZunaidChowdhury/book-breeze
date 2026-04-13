@@ -1,5 +1,6 @@
 import React from 'react'
 import heroBook from '../../public/b1.png'
+import { Link } from 'react-router'
 
 const HeroSection = () => {
     return (
@@ -14,7 +15,9 @@ const HeroSection = () => {
                     <p className='mt-4 text-text-secondary text-xl font-medium'>
                         Master the proven 7-step system to stop being the "Nice Guy," build unstoppable confidence, and attract the woman of your dreams.
                     </p>
+                    <Link to={`/#book-collection`}>
                     <button className='tracking-wider mt-8 btn text-zinc-200 text-base font-medium bg-green-600 hover:bg-green-700 transition-colors duration-300'>Explore Books</button>
+                    </Link>
                 </div>
                 {/* right */}
                 <div className='justify-self-center'>

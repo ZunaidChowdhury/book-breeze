@@ -17,7 +17,14 @@ import BookCardWide from './cards/BookCardWide';
 //     yearOfPublishing: 1960
 // }
 
-const ReadBooks = ({ sortBy, pagesAscending, ratingAscending }) => {
+const ReadBooks = ({ sortBy, pagesAscending, ratingAscending, resetSortOrder }) => {
+    useEffect(() => {
+
+        return () => {
+            resetSortOrder();          
+        }
+    }, [])
+
     const { readBooks } = useContext(BookContext);
     // console.log(readBooks);
     let filteredList = readBooks;

@@ -10,7 +10,12 @@ const ListedBooks = () => {
   const [sortBy, setSortBy] = useState(null)
   const [pagesAscending, setPagesAscending] = useState(false)
   const [ratingAscending, setRatingAscending] = useState(false)
-  
+
+  const resetSortOrder = () => {
+    setPagesAscending(false);
+    setRatingAscending(false);
+  }
+
   return (
     <div className='w-full max-w-350 mx-auto'>
 
@@ -27,8 +32,8 @@ const ListedBooks = () => {
         <div className="dropdown dropdown-end">
           <div tabIndex={0} role="button" className="btn m-1 text-lg">Sort by -</div>
           <ul tabIndex="-1" className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm text-lg font-semibold">
-            <li onClick={() => {setSortBy('pages'); setPagesAscending(!pagesAscending)}}><a>{pagesAscending ? 'Pages [Desceding]' : 'Pages [Asceding]'}</a></li>
-            <li onClick={() => {setSortBy('rating'); setRatingAscending(!ratingAscending)}}><a>{ratingAscending ? 'Rating [Desceding]' : 'Rating [Asceding]'}</a></li>
+            <li onClick={() => { setSortBy('pages'); setPagesAscending(!pagesAscending) }}><a>{pagesAscending ? 'Pages [Desceding]' : 'Pages [Asceding]'}</a></li>
+            <li onClick={() => { setSortBy('rating'); setRatingAscending(!ratingAscending) }}><a>{ratingAscending ? 'Rating [Desceding]' : 'Rating [Asceding]'}</a></li>
           </ul>
         </div>
       </div>
@@ -42,10 +47,10 @@ const ListedBooks = () => {
         </TabList>
 
         <TabPanel>
-          <ReadBooks sortBy={sortBy} pagesAscending={pagesAscending} ratingAscending={ratingAscending} />
+          <ReadBooks sortBy={sortBy} pagesAscending={pagesAscending} ratingAscending={ratingAscending} resetSortOrder={resetSortOrder} />
         </TabPanel>
         <TabPanel>
-          <WishlistBooks sortBy={sortBy} ratingAscending={ratingAscending}  />
+          <WishlistBooks sortBy={sortBy} pagesAscending={pagesAscending} ratingAscending={ratingAscending} resetSortOrder={resetSortOrder}  />
         </TabPanel>
       </Tabs>
 
