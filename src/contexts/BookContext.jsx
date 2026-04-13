@@ -1,5 +1,6 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 import { toast } from 'react-toastify';
+import { deleteReadlistToLocalStorage, deleteWishlistToLocalStorage, getReadlistFromLocalStorage, getWishlistFromLocalStorage, saveReadlistToLocalStorage, saveWishlistToLocalStorage } from '../utils/localDB';
 
 export const BookContext = createContext();
 
@@ -15,6 +16,7 @@ const BookContextProvider = ({ children }) => {
     else {
       setReadBooks([...readBooks, theBook])
       toast.success("Marked as Read.");
+      saveReadlistToLocalStorage(theBook)
     }
   }
 
@@ -28,20 +30,33 @@ const BookContextProvider = ({ children }) => {
     else {
       setWishBooks([...wishBooks, theBook])
       toast.success("Added to Wishlist.");
+      saveWishlistToLocalStorage(theBook)
     }
   }
 
 
   const deleteFromReadlist = (bookId) => {
-      const updatedReadBooks = readBooks.filter(b => b.bookId !== parseInt(bookId))
-      setReadBooks(updatedReadBooks)
+    const updatedReadBooks = readBooks.filter(b => b.bookId !== parseInt(bookId))
+    setReadBooks(updatedReadBooks)
+    deleteReadlistToLocalStorage(bookId)
+    toast.success("Deleted from Readlist.");
   }
 
 
   const deleteFromWishlist = (bookId) => {
-      const updatedWishBooks = wishBooks.filter(b => b.bookId !== parseInt(bookId))
-      setWishBooks(updatedWishBooks)
+    const updatedWishBooks = wishBooks.filter(b => b.bookId !== parseInt(bookId))
+    setWishBooks(updatedWishBooks)
+    deleteWishlistToLocalStorage(bookId)
+    toast.success("Deleted from Wishlist.");
   }
+
+  useEffect(() => {
+    const localReadlist = getReadlistFromLocalStorage();
+    setReadBooks(localReadlist);
+    const localWishlist = getWishlistFromLocalStorage();
+    setWishBooks(localWishlist)
+
+  }, [])
 
   const data = {
     readBooks,

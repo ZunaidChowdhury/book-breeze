@@ -38,7 +38,7 @@ const ListedBooks = () => {
       <Tabs className='mb-20'>
         <TabList >
           <Tab>Read Books</Tab>
-          <Tab>Wishlist Books</Tab>
+          <Tab>Wishlist</Tab>
         </TabList>
 
         <TabPanel>
