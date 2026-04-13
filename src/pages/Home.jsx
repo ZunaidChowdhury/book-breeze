@@ -6,7 +6,7 @@ const bookListDataPromise = fetch('/booksData.json').then(res => res.json());
 
 const Home = () => {
   return (
-    <div>
+    <div className='min-h-screen'>
       <HeroSection />
       <BookListGrid bookListDataPromise={bookListDataPromise} />
     </div>

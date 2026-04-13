@@ -12,6 +12,7 @@ import NotFound from './pages/NotFound';
 import ListedBooks from './pages/ListedBooks';
 import PagesToRead from './pages/PagesToRead';
 import BookDetails from './pages/BookDetails';
+import BookContextProvider from './contexts/BookContext';
 
 
 const router = createBrowserRouter([
@@ -32,6 +33,9 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <BookContextProvider>
+      <RouterProvider router={router} />
+
+    </BookContextProvider>
   </StrictMode>,
 )

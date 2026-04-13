@@ -1,5 +1,7 @@
-import React, { Suspense, use, useState } from 'react'
+import React, { Suspense, use, useContext, useState } from 'react'
 import { useParams } from 'react-router';
+import { BookContext } from '../contexts/BookContext';
+import { RingLoader } from 'react-spinners';
 
 const BookDetails = ({ bookId, booksDataPromise }) => {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -8,13 +10,22 @@ const BookDetails = ({ bookId, booksDataPromise }) => {
 
     // console.log(theBook);
 
+    const {
+        handleMarkAsRead, handleWishlist
+    } = useContext(BookContext);
+
+
+
     return (
         // <div className='w-full max-w-292.5 mx-auto mt-2 mb-6 grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-16'>
-        <div className='mt-8 mb-20 w-full max-w-350 mx-auto mb-6 grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-16'>
+        <div className='mt-8 mb-20 w-full max-w-350 mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-16'>
 
             {/* left  */}
             <div className='bg-zinc-200 rounded-2xl p-18.5 flex justify-center items-center'>
-                <img src={theBook.image} alt={`${theBook.bookName} image`} />
+                <div className='w-full h-full max-h-153'>
+
+                <img className='h-full w-full object-contain'  src={theBook.image} alt={`${theBook.bookName} image`} />
+                </div>
             </div>
 
             {/* right */}
@@ -70,8 +81,8 @@ const BookDetails = ({ bookId, booksDataPromise }) => {
                 </table>
 
                 <div className='mt-6'>
-                    <a className="btn bg-white border border-black text-black mr-2 text-base">Add to Readlist</a>
-                    <a className="btn bg-theme-secondary text-white text-base">Add to Wishlist</a>
+                    <button onClick={() => handleMarkAsRead(theBook)} className="btn bg-white border border-black text-black mr-2 text-lg font-normal px-5 py-5.5">Mark as Read</button>
+                    <button onClick={() => handleWishlist(theBook)} className="btn bg-theme-secondary text-white text-lg font-normal px-5 py-5.5">Add to Wishlist</button>
                 </div>
 
 
@@ -90,7 +101,7 @@ const BookDetailsPage = () => {
     const booksDataPromise = fetch('/booksData.json').then(res => res.json());
 
     return (
-        <Suspense fallback={<>loading...</>}>
+        <Suspense fallback={<div className='flex items-center justify-center min-h-screen'><RingLoader color="#00ff19" /></div>}>
             <BookDetails bookId={bookId} booksDataPromise={booksDataPromise} />
         </Suspense>
     )
